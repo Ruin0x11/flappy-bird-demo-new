@@ -165,7 +165,7 @@
   (let [new-state (swap! flap-state (partial time-update time))]
     (when (:timer-running new-state)
       (go
-       (<! (timeout 30))
+       (<! (timeout 1))
        (.requestAnimationFrame js/window time-loop)))))
 
 (defn start-game []
